@@ -1,7 +1,10 @@
-
 def oxford_comma(array)
-  last_ele = array.pop()
-  new_arr = array.join( ", ") << ", and " + last_ele
-  return new_arr
-end
-
+   case array.length 
+ when 1
+   "#{array[0]}"
+ when 2
+   array[0..1].join(" and ")
+ else 
+   array[0...-1].join(", ") << ", and #{array[-1]}"
+ end 
+ end 
